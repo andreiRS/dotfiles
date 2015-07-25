@@ -1,0 +1,34 @@
+[user]
+	name = Razvan Andrei Surdu
+	email = razvan.surdu@gmail.com
+[core]
+	excludesfile = /Users/andreisurdu/.gitignore_global
+	autocrlf = input
+	editor = sublime -n -w
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[config]
+	email = razvan.surdu@innogames.com
+[alias]
+	where = branch --contains
+	alls = !git add --all && git status -sb
+	amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
+	ci = commit
+	co = checkout
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	rb = pull --rebase
+	s = status
+	st = status -sb
+	go = "!f() { git checkout $1; git pull; git submodule update; }; f"
+	fb = !git branch -a | grep
+	cls = clean -f -d
+	bl = branch -lvv
+	ba = branch -avv	
+	su = submodule update
+	rh = reset --hard
+[push]
+	default = simple
